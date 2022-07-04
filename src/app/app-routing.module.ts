@@ -5,7 +5,7 @@ const routes: Routes = [
   {
     path: 'products',
     loadChildren: () =>
-      import('../features/product-list/product-list.module').then(
+      import('./features/product-list/product-list.module').then(
         (m) => m.ProductListModule
       ),
   },
