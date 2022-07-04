@@ -1,4 +1,19 @@
-<div class="toolbar" role="banner">
-  <img width="40" alt="Angular Logo" src="assets/coffee-cup-svgrepo-com.svg" />
+<div class="prd-toolbar" role="banner">
+  <img
+    width="40"
+    alt="Angular Logo"
+    [routerLink]="['/']"
+    src="assets/coffee-cup-svgrepo-com.svg"
+  />
   <span>Welcome to Coffee Products!</span>
 </div>
+
+<span class="prd-nav-separator">|</span>
+
+<mat-button-toggle-group name="navigation" aria-label="items to navigate">
+  <mat-button-toggle value="products" [routerLink]="['/products']"
+    >Products</mat-button-toggle
+  >
+</mat-button-toggle-group>
+
+<span class="prd-nav-separator">|</span>

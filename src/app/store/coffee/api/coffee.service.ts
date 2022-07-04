@@ -14,7 +14,7 @@ import { Coffee, MapStateCoffees } from '../models';
   providedIn: 'root',
 })
 export class CoffeeService {
-  readonly coffeeCountPerLoad = 20;
+  readonly coffeeCountPerLoad = 50;
 
   constructor(private http: HttpClient) {}
 

@@ -1,8 +1,7 @@
 import { createAction, props } from '@ngrx/store';
 import { Update } from '@ngrx/entity';
 
-import { Coffee } from './coffee.model';
-import { MapStateCoffees } from './models';
+import { Coffee, MapStateCoffees } from './models';
 
 export const loadCoffees = createAction('[Coffee/API] Load Coffees');
 

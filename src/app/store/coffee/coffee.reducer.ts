@@ -1,7 +1,8 @@
 import { Action, createReducer, on } from '@ngrx/store';
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
-import { Coffee } from './coffee.model';
+
 import * as CoffeeActions from './coffee.actions';
+import { Coffee } from './models';
 
 export const coffeesFeatureKey = 'coffees';
 
