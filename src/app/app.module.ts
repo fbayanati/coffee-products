@@ -11,6 +11,7 @@ import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { PrdStoreModule } from './store/store.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { routerReducer, StoreRouterConnectingModule } from '@ngrx/router-store';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,7 +20,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     PrdHeaderModule,
     PrdFooterModule,
-    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot(
+      {
+        router: routerReducer,
+      },
+      {}
+    ),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production,
@@ -27,6 +33,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     EffectsModule.forRoot([]),
     PrdStoreModule,
     BrowserAnimationsModule,
+    StoreRouterConnectingModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],
