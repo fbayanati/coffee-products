@@ -75,6 +75,12 @@ export const reducer = createReducer(
       isLoading: false,
     };
   }),
+  on(CoffeeActions.setCoffeeSearchPage, (state, action) => {
+    return {
+      ...state,
+      searchPage: action.searchPage,
+    };
+  }),
   on(CoffeeActions.clearCoffees, (state) => adapter.removeAll(state))
 );
 

@@ -1,0 +1,32 @@
+<mat-card *ngIf="!!coffee; else noCoffee" class="prd-card">
+  <mat-card-header class="prd-card-header">
+    <mat-card-title class="prd-card-header-title">{{
+      coffee.blend_name
+    }}</mat-card-title>
+    <mat-card-subtitle>{{ coffee.id }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="prd-card-content">
+      <div><span class="prd-card-label">Origin:</span>{{ coffee.origin }}</div>
+      <div>
+        <span class="prd-card-label">Variety:</span>{{ coffee.variety }}
+      </div>
+      <div>
+        <span class="prd-card-label">Intensifier:</span>{{ coffee.intensifier }}
+      </div>
+    </div>
+    <p><span class="prd-card-label">Notes:</span>{{ coffee.notes }}</p>
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <button mat-button>The coffee details!</button>
+  </mat-card-actions>
+</mat-card>
+
+<ng-template #noCoffee>
+  <mat-card class="prd-card">
+    <mat-card-header>
+      <mat-icon>coffee</mat-icon>
+      <mat-card-title>No Coffee!</mat-card-title>
+    </mat-card-header>
+  </mat-card>
+</ng-template>

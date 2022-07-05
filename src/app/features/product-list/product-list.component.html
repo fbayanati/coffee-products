@@ -1,1 +1,66 @@
-<p>product-list works!</p>
+<div class="prd-list-nav">
+  <div class="prd-list-nav-back">
+    <button
+      class="prd-list-nav-back-btn"
+      mat-icon-button
+      color="primary"
+      aria-label="Back to home page"
+      [routerLink]="['/']"
+    >
+      <mat-icon>arrow_back</mat-icon>
+      <span class="prd-list-nav-back-label">Back to home page</span>
+    </button>
+  </div>
+  <div class="prd-list-nav-pagination">
+    <button
+      mat-icon-button
+      color="primary"
+      aria-label="First page"
+      [disabled]="isFirstPageDisabled"
+      (click)="onFirstPage()"
+    >
+      <mat-icon>first_page</mat-icon>
+    </button>
+    <button
+      mat-icon-button
+      color="primary"
+      aria-label="Previous page"
+      [disabled]="isPreviousPageDisabled"
+      (click)="onPreviousPage()"
+    >
+      <mat-icon>navigate_before</mat-icon>
+    </button>
+    <span class="prd-list-nav-pagination-pages"
+      >Page {{ searchPage$ | async }} of {{ totalPages$ | async }}</span
+    >
+    <button
+      mat-icon-button
+      color="primary"
+      aria-label="Next page"
+      [disabled]="isNextPageDisabled"
+      (click)="onNextPage()"
+    >
+      <mat-icon>navigate_next</mat-icon>
+    </button>
+    <button
+      mat-icon-button
+      color="primary"
+      aria-label="Last page"
+      [disabled]="isLastPageDisabled"
+      (click)="onLastPage()"
+    >
+      <mat-icon>last_page</mat-icon>
+    </button>
+  </div>
+</div>
+
+<div class="prd-list">
+  <ng-container *ngIf="this.coffeesForPage$ | async as coffees">
+    <!-- <div *ngFor="let coffee of coffees"> -->
+    <prd-product-card
+      *ngFor="let coffee of coffees"
+      [coffee]="coffee"
+    ></prd-product-card>
+    <!-- </div> -->
+  </ng-container>
+</div>

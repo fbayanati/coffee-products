@@ -1,0 +1,58 @@
+:host {
+  display: flex;
+  width: 100%;
+}
+
+.prd-card {
+  width: 100%;
+
+  &-header {
+    border-radius: 16px;
+    background: lightblue;
+    &-title {
+      margin: 1rem 0;
+    }
+    margin-bottom: 1rem;
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &-label {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0 1rem 0 0;
+  }
+}
+
+/* Responsive Styles */
+/* https://github.com/angular/flex-layout/wiki/Responsive-API */
+
+@media screen and (max-width: 840px) {
+  .prd-card-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .prd-card-label {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-right: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .prd-card-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .prd-card-label {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-right: 0.4rem;
+  }
+}

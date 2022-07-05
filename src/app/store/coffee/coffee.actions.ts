@@ -14,6 +14,11 @@ export const loadCoffeesFailure = createAction(
   '[Coffee/API] Load Coffees Failure'
 );
 
+export const setCoffeeSearchPage = createAction(
+  '[Coffee/API] Set Coffee Search Page',
+  props<{ searchPage: number }>()
+);
+
 export const addCoffee = createAction(
   '[Coffee/API] Add Coffee',
   props<{ coffee: Coffee }>()

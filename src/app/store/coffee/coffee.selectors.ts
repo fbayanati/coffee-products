@@ -5,6 +5,10 @@ import {
 } from '@ngrx/store';
 
 import * as fromCoffee from './coffee.reducer';
+import { Coffee } from './models';
+
+const pageSize = 10;
+const maxPageNumber = 5; // just having 50 records, means pages 1 to 5
 
 export interface State {
   coffees: fromCoffee.State;
@@ -57,4 +61,13 @@ export const selectCoffeesTotalCount = createSelector(
 export const selectCoffeeSearchPage = createSelector(
   selectCoffeeState,
   (state) => state.searchPage
+);
+
+export const selectCoffeesForCurrentPage = createSelector(
+  selectAllCoffees,
+  selectCoffeeSearchPage,
+  (coffees: Coffee[], searchPage: number) =>
+    searchPage >= 1 && searchPage <= maxPageNumber
+      ? coffees.slice((searchPage - 1) * pageSize, searchPage * pageSize)
+      : []
 );
