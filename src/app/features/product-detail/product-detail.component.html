@@ -1,0 +1,13 @@
+<div class="prd-detail-header">
+  <span class="prd-detail-bookmark-path">Coffee product bookmark path:</span
+  >{{ urlRoute$ | async }}
+</div>
+
+<div class="prd-detail">
+  <ng-container *ngIf="this.coffee$ | async as coffee">
+    <prd-product-card
+      [coffee]="coffee"
+      [isBackToProducts]="true"
+    ></prd-product-card>
+  </ng-container>
+</div>

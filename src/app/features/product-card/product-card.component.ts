@@ -8,4 +8,9 @@ import { Coffee } from 'src/app/store/coffee/models';
 })
 export class ProductCardComponen {
   @Input() coffee: Coffee | undefined;
+  @Input() isBackToProducts: boolean = false;
+
+  get isNavigateToProductDetails() {
+    return !this.isBackToProducts;
+  }
 }

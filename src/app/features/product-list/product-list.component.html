@@ -56,11 +56,9 @@
 
 <div class="prd-list">
   <ng-container *ngIf="this.coffeesForPage$ | async as coffees">
-    <!-- <div *ngFor="let coffee of coffees"> -->
     <prd-product-card
       *ngFor="let coffee of coffees"
       [coffee]="coffee"
     ></prd-product-card>
-    <!-- </div> -->
   </ng-container>
 </div>

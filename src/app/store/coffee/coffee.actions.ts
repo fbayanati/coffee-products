@@ -19,6 +19,11 @@ export const setCoffeeSearchPage = createAction(
   props<{ searchPage: number }>()
 );
 
+export const updateSelectedCoffeeId = createAction(
+  '[Coffee/API] Update Selected Coffee Id',
+  props<{ id: string }>()
+);
+
 export const addCoffee = createAction(
   '[Coffee/API] Add Coffee',
   props<{ coffee: Coffee }>()

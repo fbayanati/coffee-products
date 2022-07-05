@@ -81,6 +81,12 @@ export const reducer = createReducer(
       searchPage: action.searchPage,
     };
   }),
+  on(CoffeeActions.updateSelectedCoffeeId, (state, action) => {
+    return {
+      ...state,
+      selectedCoffeeId: action.id,
+    };
+  }),
   on(CoffeeActions.clearCoffees, (state) => adapter.removeAll(state))
 );
 

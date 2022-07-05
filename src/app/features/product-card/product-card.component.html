@@ -18,7 +18,16 @@
     <p><span class="prd-card-label">Notes:</span>{{ coffee.notes }}</p>
   </mat-card-content>
   <mat-card-actions align="end">
-    <button mat-button>The coffee details!</button>
+    <button
+      *ngIf="isNavigateToProductDetails"
+      mat-button
+      [routerLink]="['/product', coffee.id]"
+    >
+      The coffee details!
+    </button>
+    <button *ngIf="isBackToProducts" mat-button [routerLink]="['/products']">
+      Back to list of coffee products
+    </button>
   </mat-card-actions>
 </mat-card>
 
