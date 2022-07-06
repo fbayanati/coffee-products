@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { select, Store } from '@ngrx/store';
 import { map, tap, takeUntil, Observable, Subject } from 'rxjs';
 import { StoreState } from 'src/app/store';
@@ -24,7 +23,7 @@ export class ProductListComponent implements OnInit {
 
   private readonly perPage = 10;
 
-  constructor(private store: Store<StoreState>, private router: Router) {
+  constructor(private store: Store<StoreState>) {
     this.coffeesForPage$ = this.store.pipe(
       select(CoffeeSelectors.selectCoffeesForCurrentPage)
     );

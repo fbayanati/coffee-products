@@ -8,9 +8,8 @@ describe('PrdFooterComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PrdFooterComponent ]
-    })
-    .compileComponents();
+      declarations: [PrdFooterComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(PrdFooterComponent);
     component = fixture.componentInstance;
@@ -19,5 +18,9 @@ describe('PrdFooterComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should return current calendar yearin number when calling currentYear method', () => {
+    expect(component.currentYear()).toBe(new Date().getFullYear());
   });
 });

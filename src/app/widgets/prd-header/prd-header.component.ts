@@ -1,6 +1,4 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { MatButtonToggleAppearance } from '@angular/material/button-toggle';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'prd-header',
@@ -8,6 +6,4 @@ import { Router } from '@angular/router';
   styleUrls: ['./prd-header.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PrdHeaderComponent {
-  constructor(router: Router) {}
-}
+export class PrdHeaderComponent {}
