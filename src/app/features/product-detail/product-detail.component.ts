@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { select, Store } from '@ngrx/store';
 import { map, Observable } from 'rxjs';
@@ -13,6 +13,7 @@ import * as RouterSelectors from '../../store/router-store';
   selector: 'prd-product-detail',
   templateUrl: './product-detail.component.html',
   styleUrls: ['./product-detail.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProductDetailComponent implements OnInit {
   urlRoute$: Observable<string>;
